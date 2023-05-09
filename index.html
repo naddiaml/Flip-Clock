@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/8e95fe90e4.js" crossorigin="anonymous"></script>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- SEO Optimization -->
+  <meta name="description"
+    content="Displays a clock that allows you to make your device screen look like a flip clock! It displays the time with a flip animation, just like Fliqlo or similar. Also you can embed it on your favorite Notion's page.">
+  <meta name="keywords" content="flip clock, fliqlo, flip clock online, fliqlo online">
+  <meta name="author" content="Nadia Mlinarevic">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Flip Clock</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="app">
+      <div class="flip-clock-container">
+        <div class="flip-clock flip-clock-h">
+          <div class="digit digit-left">
+            <!-- ::before -->
+            <div class="card">
+              <div class="card-face card-face-front"></div>
+              <div class="card-face card-face-back"></div>
+            </div>
+            <!-- ::after -->
+          </div>
+          <div class="digit digit-right">
+            <!-- ::before -->
+            <div class="card">
+              <div class="card-face card-face-front"></div>
+              <div class="card-face card-face-back"></div>
+            </div>
+            <!-- ::after -->
+          </div>
+        </div>
+
+        <div class="flip-clock flip-clock-m">
+          <div class="digit digit-left">
+            <!-- ::before -->
+            <div class="card">
+              <div class="card-face card-face-front"></div>
+              <div class="card-face card-face-back"></div>
+            </div>
+            <!-- ::after -->
+          </div>
+          <div class="digit digit-right">
+            <!-- ::before -->
+            <div class="card">
+              <div class="card-face card-face-front"></div>
+              <div class="card-face card-face-back"></div>
+            </div>
+            <!-- ::after -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <i class="fa-solid fa-moon" id="toggleLight"></i>
+  </div>
+
+  <script src="app/script.js"></script>
+</body>
+
+</html>
