@@ -101,24 +101,47 @@
 const toggle = document.getElementById('toggleLight');
 const icon = document.querySelector('i');
 const body = document.querySelector('body');
-const root = document.querySelector(":root"); 
+const root = document.querySelector(":root");
 
-toggle.addEventListener('click', function(){
-    this.classList.toggle('fa-sun');
-    if(this.classList.toggle('fa-moon')){
-      body.style.background = '#191919';
-      body.style.transition = '1.5s';
-      root.style.setProperty("--cards-darkbg", '#000000');
-      root.style.setProperty("--cards-darkcolor", '#B7B7B7');
-      root.style.setProperty("--cards-darkborder", '#070707');
-      icon.style.color = '#000000'
-
-    }else{
-      body.style.background = '#ffffff';
-      body.style.transition = '1.5s';
-      root.style.setProperty("--cards-darkbg", '#E6E6E6');
-      root.style.setProperty("--cards-darkcolor", '#55534E');
-      root.style.setProperty("--cards-darkborder", '#ffff');
-      icon.style.color = '#78766F'
-    }
+// Recuperar el tema del Local Storage al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    toggle.classList.add('fa-sun');
+    applyDarkTheme();
+  }
 });
+
+toggle.addEventListener('click', function () {
+  if (this.classList.contains('fa-moon')) {
+    // Cambiar a tema claro y guardar en Local Storage
+    applyLightTheme();
+    localStorage.setItem("theme", "light");
+  } else {
+    // Cambiar a tema oscuro y guardar en Local Storage
+    applyDarkTheme();
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+function applyLightTheme() {
+  toggle.classList.remove('fa-sun');
+  toggle.classList.add('fa-moon');
+  body.style.background = '#ffffff';
+  body.style.transition = '1.5s';
+  root.style.setProperty("--cards-darkbg", '#E6E6E6');
+  root.style.setProperty("--cards-darkcolor", '#55534E');
+  root.style.setProperty("--cards-darkborder", '#ffff');
+  icon.style.color = '#78766F';
+}
+
+function applyDarkTheme() {
+  toggle.classList.remove('fa-moon');
+  toggle.classList.add('fa-sun');
+  body.style.background = '#191919';
+  body.style.transition = '1.5s';
+  root.style.setProperty("--cards-darkbg", '#000000');
+  root.style.setProperty("--cards-darkcolor", '#B7B7B7');
+  root.style.setProperty("--cards-darkborder", '#070707');
+  icon.style.color = '#000000';
+}
