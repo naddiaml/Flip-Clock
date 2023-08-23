@@ -115,6 +115,12 @@ toggle.addEventListener('click', function () {
   }
 });
 
+
+toggle.addEventListener('click', function () {
+  const currentTheme = this.classList.contains('fa-moon') ? "light" : "dark";
+  toggleTheme(currentTheme);
+});
+
 function applyLightTheme() {
   toggle.classList.remove('fa-sun');
   toggle.classList.add('fa-moon');
