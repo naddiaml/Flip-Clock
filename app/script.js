@@ -143,5 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme === "dark") {
     toggle.classList.add('fa-sun');
     applyDarkTheme();
+  } else {
+    toggle.classList.add('fa-moon');
+    applyLightTheme();
   }
 });
