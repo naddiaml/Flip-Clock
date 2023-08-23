@@ -107,11 +107,11 @@ toggle.addEventListener('click', function () {
   if (this.classList.contains('fa-moon')) {
     // Cambiar a tema claro y guardar en Local Storage
     applyLightTheme();
-    localStorage.setItem("theme", "light");
+    window.localStorage.setItem("theme", "light");
   } else {
     // Cambiar a tema oscuro y guardar en Local Storage
     applyDarkTheme();
-    localStorage.setItem("theme", "dark");
+    window.localStorage.setItem("theme", "dark");
   }
 });
 
@@ -139,7 +139,7 @@ function applyDarkTheme() {
 
 // Recuperar el tema del Local Storage al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = window.localStorage.getItem("theme");
   if (savedTheme === "dark") {
     toggle.classList.add('fa-sun');
     applyDarkTheme();
