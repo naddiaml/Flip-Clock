@@ -108,10 +108,10 @@ toggle.addEventListener('click', function () {
     // Cambiar a tema claro y guardar en Local Storage
     applyLightTheme();
     window.localStorage.setItem("theme", "light");
-  } else {
-    // Cambiar a tema oscuro y guardar en Local Storage
-    applyDarkTheme();
-    window.localStorage.setItem("theme", "dark");
+    toggle.addEventListener('click', function () {
+      applyDarkTheme();
+      window.localStorage.setItem("theme", "dark");
+    });
   }
 });
 
