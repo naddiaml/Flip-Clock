@@ -103,24 +103,6 @@ const icon = document.querySelector('i');
 const body = document.querySelector('body');
 const root = document.querySelector(":root");
 
-toggle.addEventListener('click', function () {
-  if (this.classList.contains('fa-moon')) {
-    // Cambiar a tema claro y guardar en Local Storage
-    applyLightTheme();
-    window.localStorage.setItem("theme", "light");
-    toggle.addEventListener('click', function () {
-      applyDarkTheme();
-      window.localStorage.setItem("theme", "dark");
-    });
-  }
-});
-
-
-toggle.addEventListener('click', function () {
-  const currentTheme = this.classList.contains('fa-moon') ? "light" : "dark";
-  toggleTheme(currentTheme);
-});
-
 function applyLightTheme() {
   toggle.classList.remove('fa-sun');
   toggle.classList.add('fa-moon');
@@ -153,4 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.classList.add('fa-moon');
     applyLightTheme();
   }
+});
+
+function toggleTheme(theme) {
+  if (theme === "dark") {
+    applyDarkTheme();
+    window.localStorage.setItem("theme", "dark");
+  } else {
+    applyLightTheme();
+    window.localStorage.setItem("theme", "light");
+  }
+}
+
+toggle.addEventListener('click', function () {
+  const currentTheme = this.classList.contains('fa-moon') ? "light" : "dark";
+  toggleTheme(currentTheme);
 });
