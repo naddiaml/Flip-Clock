@@ -103,15 +103,6 @@ const icon = document.querySelector('i');
 const body = document.querySelector('body');
 const root = document.querySelector(":root");
 
-// Recuperar el tema del Local Storage al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    toggle.classList.add('fa-sun');
-    applyDarkTheme();
-  }
-});
-
 toggle.addEventListener('click', function () {
   if (this.classList.contains('fa-moon')) {
     // Cambiar a tema claro y guardar en Local Storage
@@ -145,3 +136,12 @@ function applyDarkTheme() {
   root.style.setProperty("--cards-darkborder", '#070707');
   icon.style.color = '#000000';
 }
+
+// Recuperar el tema del Local Storage al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    toggle.classList.add('fa-sun');
+    applyDarkTheme();
+  }
+});
